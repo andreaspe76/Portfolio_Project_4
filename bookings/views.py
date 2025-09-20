@@ -1,6 +1,15 @@
+"""Bookings app views
+"""
+
 from django.shortcuts import render
-from django.http import HttpResponse
+
 
 # Create your views here.
 def home(request):
-    return HttpResponse("Welcome to the Booking App!")
+    """Renders the home page."""
+    return render(request, 'home.html')
+
+
+def menu(request):
+    """Renders the menu page."""
+    return render(request, 'menu.html')
