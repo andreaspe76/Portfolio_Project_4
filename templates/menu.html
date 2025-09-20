@@ -1,23 +1,51 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}Menu{% endblock %}
-
+{% extends 'base.html' %} {% load static %} {% block title %}Menu{% endblock %}
 {% block content %}
 <div class="container mt-5">
   <h2 class="mb-4 text-center">Our Menu</h2>
+
   <div class="row">
     <!-- Starters -->
     <div class="col-md-6">
       <h4>Starters</h4>
       <ul class="list-group mb-4">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Tomato Soup
-          <span class="badge bg-primary rounded-pill">€5.00</span>
+        <li class="list-group-item">
+          <div class="d-flex">
+            <img
+              src="{% static 'images/tomato_soup.webp' %}"
+              alt="Tomato Soup"
+              class="me-3"
+              style="width: 60px; height: 60px; object-fit: cover"
+            />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>Tomato Soup</strong>
+                <span class="badge bg-primary rounded-pill">€5.00</span>
+              </div>
+              <p class="small text-muted mb-0">
+                A warm blend of ripe tomatoes and herbs, served with garlic
+                croutons.
+              </p>
+            </div>
+          </div>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Bruschetta
-          <span class="badge bg-primary rounded-pill">€6.50</span>
+        <li class="list-group-item">
+          <div class="d-flex">
+            <img
+              src="{% static 'images/bruschetta.webp' %}"
+              alt="Bruschetta"
+              class="me-3"
+              style="width: 60px; height: 60px; object-fit: cover"
+            />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>Bruschetta</strong>
+                <span class="badge bg-primary rounded-pill">€6.50</span>
+              </div>
+              <p class="small text-muted mb-0">
+                Grilled bread topped with fresh tomatoes, basil, and olive oil.
+              </p>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -26,13 +54,45 @@
     <div class="col-md-6">
       <h4>Main Courses</h4>
       <ul class="list-group mb-4">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Grilled Salmon
-          <span class="badge bg-primary rounded-pill">€14.00</span>
+        <li class="list-group-item">
+          <div class="d-flex">
+            <img
+              src="{% static 'images/grilled_salmon.webp' %}"
+              alt="Grilled Salmon"
+              class="me-3"
+              style="width: 60px; height: 60px; object-fit: cover"
+            />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>Grilled Salmon</strong>
+                <span class="badge bg-primary rounded-pill">€14.00</span>
+              </div>
+              <p class="small text-muted mb-0">
+                Fresh Atlantic salmon grilled to perfection, served with lemon
+                butter and seasonal vegetables.
+              </p>
+            </div>
+          </div>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Beef Lasagna
-          <span class="badge bg-primary rounded-pill">€12.50</span>
+        <li class="list-group-item">
+          <div class="d-flex">
+            <img
+              src="{% static 'images/beef_lasagna.webp' %}"
+              alt="Beef Lasagna"
+              class="me-3"
+              style="width: 60px; height: 60px; object-fit: cover"
+            />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>Beef Lasagna</strong>
+                <span class="badge bg-primary rounded-pill">€12.50</span>
+              </div>
+              <p class="small text-muted mb-0">
+                Layers of pasta, seasoned beef, tomato sauce, and melted cheese
+                baked to golden perfection.
+              </p>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -43,13 +103,44 @@
     <div class="col-md-6">
       <h4>Desserts</h4>
       <ul class="list-group mb-4">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Tiramisu
-          <span class="badge bg-primary rounded-pill">€5.50</span>
+        <li class="list-group-item">
+          <div class="d-flex">
+            <img
+              src="{% static 'images/tiramisu.webp' %}"
+              alt="Tiramisu"
+              class="me-3"
+              style="width: 60px; height: 60px; object-fit: cover"
+            />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>Tiramisu</strong>
+                <span class="badge bg-primary rounded-pill">€5.50</span>
+              </div>
+              <p class="small text-muted mb-0">
+                Classic Italian dessert with layers of coffee-soaked ladyfingers
+                and mascarpone cream.
+              </p>
+            </div>
+          </div>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Chocolate Cake
-          <span class="badge bg-primary rounded-pill">€4.50</span>
+        <li class="list-group-item">
+          <div class="d-flex">
+            <img
+              src="{% static 'images/chocolate_cake.webp' %}"
+              alt="Chocolate Cake"
+              class="me-3"
+              style="width: 60px; height: 60px; object-fit: cover"
+            />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>Chocolate Cake</strong>
+                <span class="badge bg-primary rounded-pill">€4.50</span>
+              </div>
+              <p class="small text-muted mb-0">
+                Rich and moist chocolate cake topped with a silky ganache.
+              </p>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
@@ -58,13 +149,43 @@
     <div class="col-md-6">
       <h4>Drinks</h4>
       <ul class="list-group mb-4">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          House Wine (Glass)
-          <span class="badge bg-primary rounded-pill">€3.50</span>
+        <li class="list-group-item">
+          <div class="d-flex">
+            <img
+              src="{% static 'images/house_wine.webp' %}"
+              alt="House Wine"
+              class="me-3"
+              style="width: 60px; height: 60px; object-fit: cover"
+            />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>House Wine (Glass)</strong>
+                <span class="badge bg-primary rounded-pill">€3.50</span>
+              </div>
+              <p class="small text-muted mb-0">
+                A smooth red or crisp white, selected daily by our sommelier.
+              </p>
+            </div>
+          </div>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Espresso
-          <span class="badge bg-primary rounded-pill">€2.00</span>
+        <li class="list-group-item">
+          <div class="d-flex">
+            <img
+              src="{% static 'images/espresso.webp' %}"
+              alt="Espresso"
+              class="me-3"
+              style="width: 60px; height: 60px; object-fit: cover"
+            />
+            <div>
+              <div class="d-flex justify-content-between align-items-center">
+                <strong>Espresso</strong>
+                <span class="badge bg-primary rounded-pill">€2.00</span>
+              </div>
+              <p class="small text-muted mb-0">
+                Bold and aromatic Italian-style espresso, served piping hot.
+              </p>
+            </div>
+          </div>
         </li>
       </ul>
     </div>
