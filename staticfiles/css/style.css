@@ -1,0 +1,52 @@
+/* Carousel */
+#restaurantCarousel {
+  max-width: 1000px;   /* adjust width*/
+  margin: 0 auto;     /* center horizontally */
+}
+
+#restaurantCarousel .carousel-item img {
+  height: 700px;      /* fixed height */
+  object-fit: cover;  /* crop images nicely */
+}
+
+/* Stack carousel and text vertically */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Paragraph styles */
+.home-section h2,
+.home-section p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+.home-section {
+  margin-top: 2rem;
+}
+
+/* Footer */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;  /* pushes footer down */
+}
+footer {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  text-align: center;
+  margin-top: auto; /* ensures footer is at the bottom */
+}
