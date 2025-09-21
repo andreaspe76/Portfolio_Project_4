@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block title %}Make a
+Booking{% endblock %} {% block content %}
+<div class="container mt-5" style="max-width: 600px">
+  <h2 class="mb-4 text-center">Book a Table</h2>
+  <form method="post">
+    {% csrf_token %} {{ form|crispy }}
+    <button type="submit" class="btn btn-success w-100">Confirm Booking</button>
+  </form>
+
+  <p class="mt-3 text-center">
+    <a href="{% url 'home' %}">Back to Home</a>
+  </p>
+</div>
+{% endblock %}
