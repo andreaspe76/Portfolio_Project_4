@@ -27,6 +27,11 @@
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
+              <a class="nav-link" href="{% url 'booking_create' %}"
+                >Book a Table</a
+              >
+            </li>
+            <li class="nav-item">
               <span class="nav-link">Hello, {{ user.username }}</span>
             </li>
             <li class="nav-item">
