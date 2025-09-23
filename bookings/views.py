@@ -18,7 +18,7 @@ def menu(request):
 
 
 @login_required
-def book_create(request):
+def booking_create(request):
     """Renders the booking form."""
     if request.method == "POST":
         form = BookingForm(request.POST)
