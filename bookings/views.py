@@ -3,6 +3,7 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import BookingForm
 from .models import Booking
 
@@ -27,6 +28,7 @@ def booking_create(request):
             booking = form.save(commit=False)
             booking.user = request.user
             booking.save()
+            messages.success(request, "Booking created successfully!")
             return redirect("booking_list")
     else:
         form = BookingForm()
