@@ -70,4 +70,4 @@ def booking_delete(request, pk):
         booking.delete()
         messages.success(request, "Booking deleted successfully!")
         return redirect("booking_list")
-    return render(request, "bookings/booking_confirm_delete.html", {"booking": booking})
+    return render(request, "bookings/booking_edit_delete.html", {"booking": booking})

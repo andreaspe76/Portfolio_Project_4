@@ -1,7 +1,11 @@
-{% extends "base.html" %} {% load crispy_forms_tags %} {% block title %}Make a
-Booking{% endblock %} {% block content %}
+{% extends "base.html" %} {% load crispy_forms_tags %} {% block title %}
+{% if update %}Edit Booking{% else %}Make a Booking{% endif %}{% endblock %}
+{% block content %}
 <div class="container mt-5" style="max-width: 600px">
-  <h2 class="mb-4 text-center">Book a Table</h2>
+  <h2 class="mb-4 text-center">
+    {% if update %}Edit Booking{% else %}Book a Table{% endif %}
+  </h2>
+
   <form method="post">
     {% csrf_token %} {{ form|crispy }}
     <button type="submit" class="btn btn-success w-100">
@@ -10,7 +14,11 @@ Booking{% endblock %} {% block content %}
   </form>
 
   <p class="mt-3 text-center">
+    {% if update %}
+    <a href="{% url 'booking_list' %}">Cancel and go back to My Bookings</a>
+    {% else %}
     <a href="{% url 'home' %}">Back to Home</a>
+    {% endif %}
   </p>
 </div>
 {% endblock %}
