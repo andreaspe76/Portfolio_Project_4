@@ -3,6 +3,7 @@
 
 import datetime
 from django import forms
+from django.core.exceptions import ValidationError
 from .models import Booking
 
 
@@ -37,3 +38,10 @@ class BookingForm(forms.ModelForm):
             "date": forms.DateInput(attrs={"type": "date", "class": "form-control",
                                            "min": datetime.date.today().strftime("%Y-%m-%d")}),
         }
+
+    def clean_date(self):
+        """Validate that the booking date is not in the past."""
+        date = self.cleaned_data.get("date")
+        if date < datetime.date.today():
+            raise ValidationError("You cannot book a table in the past.")
+        return date
