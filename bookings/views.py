@@ -58,3 +58,16 @@ def booking_update(request, pk):
     else:
         form = BookingForm(instance=booking)
     return render(request, "bookings/booking_form.html", {"form": form, "update": True})
+
+
+@login_required
+def booking_delete(request, pk):
+    """Allows users to delete their bookings."""
+    booking = get_object_or_404(
+        # Ensures user can only delete their own bookings
+        Booking, pk=pk, user=request.user)
+    if request.method == "POST":
+        booking.delete()
+        messages.success(request, "Booking deleted successfully!")
+        return redirect("booking_list")
+    return render(request, "bookings/booking_confirm_delete.html", {"booking": booking})
