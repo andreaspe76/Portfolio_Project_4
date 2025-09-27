@@ -13,3 +13,15 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = ('user', 'date', 'time', 'party_size')
     list_filter = ('date', 'time')
     search_fields = ('user__username',)
+
+
+# Define any additional control permissions here.
+
+    def has_change_permission(self, request, obj=None):
+        return request.user.is_superuser
+
+    def has_delete_permission(self, request, obj=None):
+        return request.user.is_superuser
+
+    def has_add_permission(self, request):
+        return request.user.is_superuser
