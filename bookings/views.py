@@ -1,7 +1,7 @@
 """Bookings app views
 """
 
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import BookingForm
@@ -41,3 +41,20 @@ def booking_list(request):
     bookings = Booking.objects.filter(
         user=request.user).order_by('date', 'time')
     return render(request, "bookings/booking_list.html", {"bookings": bookings})
+
+
+@login_required
+def booking_update(request, pk):
+    """Allows users to update their bookings."""
+    booking = get_object_or_404(
+        # Ensures user can only edit their own bookings
+        Booking, pk=pk, user=request.user)
+    if request.method == "POST":
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Booking updated successfully!")
+            return redirect("booking_list")
+    else:
+        form = BookingForm(instance=booking)
+    return render(request, "bookings/booking_form.html", {"form": form, "update": True})
