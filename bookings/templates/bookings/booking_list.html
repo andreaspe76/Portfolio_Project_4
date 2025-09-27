@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}My Bookings{% endblock %} 
+{% extends "base.html" %} {% block title %}My Bookings{% endblock %}
 {% block content %}
 
 <div class="container mt-5">
@@ -19,6 +19,10 @@
         <td>{{ booking.date }}</td>
         <td>{{ booking.time|time:"H:i" }}</td>
         <td>{{ booking.party_size }}</td>
+        <td>
+          <a href="{% url 'booking_update' booking.pk %}" class="btn btn-primary btn-sm">Edit</a>
+          <a href="{% url 'booking_delete' booking.pk %}" class="btn btn-danger btn-sm">Delete</a>
+        </td>
       </tr>
       {% endfor %}
     </tbody>
