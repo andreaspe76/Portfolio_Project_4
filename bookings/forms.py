@@ -1,6 +1,7 @@
 """Forms for bookings app
 """
 
+import datetime
 from django import forms
 from .models import Booking
 
@@ -33,5 +34,6 @@ class BookingForm(forms.ModelForm):
         fields = ["date", "time", "party_size"]
 
         widgets = {
-            "date": forms.DateInput(attrs={"type": "date", "class": "form-control"}),
+            "date": forms.DateInput(attrs={"type": "date", "class": "form-control",
+                                           "min": datetime.date.today().strftime("%Y-%m-%d")}),
         }
