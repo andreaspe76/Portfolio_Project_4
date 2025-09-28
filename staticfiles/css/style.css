@@ -32,6 +32,12 @@
   margin-top: 2rem;
 }
 
+/*Button styles*/
+.table td .btn + .btn {
+  margin-top: 0.5rem; 
+}
+
+
 /* Footer */
 html, body {
   height: 100%;
