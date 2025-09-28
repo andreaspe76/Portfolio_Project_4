@@ -5,8 +5,10 @@
 }
 
 #restaurantCarousel .carousel-item img {
-  height: 700px;      /* fixed height */
-  object-fit: cover;  /* crop images nicely */
+  width: 100%;       
+  height: auto;
+  max-height: 60vh;     
+  object-fit: cover;  
 }
 
 /* Stack carousel and text vertically */
@@ -59,3 +61,17 @@ footer a:visited {
 footer a:hover {
   text-decoration: underline !important;
 }
+
+/*Media Queries for responsiveness*/
+@media (max-width: 768px) {
+  #restaurantCarousel .carousel-item img {
+    max-height: 50vh; 
+  }
+}
+
+@media (max-width: 576px) {
+  #restaurantCarousel .carousel-item img {
+    max-height: 40vh; 
+  }
+}
+
