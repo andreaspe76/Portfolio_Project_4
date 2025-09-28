@@ -35,8 +35,13 @@
 /*Button styles*/
 .table td .btn + .btn {
   margin-top: 0.1rem; 
+}
+
+/* Table styles */
+.table td {
   vertical-align: middle;
 }
+
 
 /* Footer */
 html, body {

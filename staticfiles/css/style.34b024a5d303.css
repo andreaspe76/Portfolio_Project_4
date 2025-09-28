@@ -38,6 +38,10 @@
   vertical-align: middle;
 }
 
+.table td a.btn + a.btn {
+  margin-top: 0.25rem;
+}
+
 /* Footer */
 html, body {
   height: 100%;

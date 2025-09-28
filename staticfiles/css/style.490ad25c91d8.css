@@ -32,11 +32,19 @@
   margin-top: 2rem;
 }
 
+/* Booking table styles */
+/* .table.table-striped {
+  border: 1px solid #000;
+  border-radius: 4px; 
+  overflow: hidden;   
+} */
+
+
 /*Button styles*/
 .table td .btn + .btn {
   margin-top: 0.1rem; 
-  vertical-align: middle;
 }
+
 
 /* Footer */
 html, body {
