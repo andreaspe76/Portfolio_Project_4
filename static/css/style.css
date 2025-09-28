@@ -50,3 +50,12 @@ footer {
   text-align: center;
   margin-top: auto; /* ensures footer is at the bottom */
 }
+
+footer a,
+footer a:visited {
+  text-decoration: none !important;
+}
+
+footer a:hover {
+  text-decoration: underline !important;
+}
