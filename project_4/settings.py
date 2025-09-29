@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY",
                             "7Cc*2jhAYbWm2$&c9v3z!k@q)l+u#(=n1v1g0jv3f8u#(=n1v1g0jv3f8u#(=n1v1g0jv3f8u#")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'andreaspe-project-4-3264390b1a4b.herokuapp.com', 'localhost', '127.0.0.1']
