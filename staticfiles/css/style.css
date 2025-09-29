@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /* Carousel */
 #restaurantCarousel {
   max-width: 1000px;   /* adjust width*/
@@ -8,14 +15,22 @@
   width: 100%;       
   height: auto;
   max-height: 60vh;     
-  object-fit: cover;  
+  -o-object-fit: cover;     
+     object-fit: cover;  
 }
 
 /* Stack carousel and text vertically */
 .home-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
@@ -45,12 +60,19 @@ html, body {
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 main {
-  flex: 1;  /* pushes footer down */
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;  /* pushes footer down */
 }
 footer {
   background-color: #f8f9fa;
@@ -80,4 +102,5 @@ footer a:hover {
     max-height: 40vh; 
   }
 }
+
 
