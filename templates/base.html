@@ -5,20 +5,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <!-- Meta Tags -->
   <meta name="description"
     content="I Banditi – Serving delicious meals since 1985. Enjoy pizza, burgers, and traditional dishes in a warm, welcoming atmosphere. Book your table online today.">
   <meta name="keywords" content="restaurant, pizza, burgers, Italian food, dining, I Banditi, book a table">
   <meta name="author" content="I Banditi Restaurant">
-  <title>{% block title %}Restaurant{% endblock %}</title>
-
+  <title>
+    {% block title %}Restaurant{% endblock %}
+  </title>
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
   <link rel="apple-touch-icon" sizes="180x180" href="{% static 'apple-touch-icon.png' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
-
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -29,12 +28,10 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="{% url 'home' %}">I Banditi</a>
-
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
@@ -65,7 +62,6 @@
       </div>
     </div>
   </nav>
-
   <!-- Booking Confirmation Message -->
   <div class="container mt-3">
     {% if messages %}
@@ -77,12 +73,10 @@
     {% endfor %}
     {% endif %}
   </div>
-
-
-
   <!-- Page Content -->
-  <main class="container my-5">{% block content %}{% endblock %}</main>
-
+  <main class="container my-5">
+    {% block content %}{% endblock %}
+  </main>
   <!-- Footer -->
   <footer class="bg-dark text-white text-center py-3">
     <p>
@@ -95,10 +89,8 @@
         Twitter</a>
     </p>
   </footer>
-
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/cb93077446.js" crossorigin="anonymous"></script>
 </body>
