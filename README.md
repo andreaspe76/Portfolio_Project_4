@@ -220,3 +220,90 @@ Iterative testing and feedback loops guided refinements until the Minimum Viable
 - Pexels / Pixabay – Sources of royalty‑free images used in the project (hero images, menu illustrations).
 
 ---
+
+## Testing
+
+- **Lighthouse**: Passed performance, accessibility, best practices, SEO.
+
+<img src="static/images/lighthouse.png" alt="Lighthouse result image" width="50%">
+
+<br><br>
+
+- **W3C HTML & CSS Validators**: No errors.
+
+<img src="static/images/w3c_html.png" alt="W3C html validation" width="50%">
+
+**Validation Link:** https://validator.w3.org/nu/?doc=https%3A%2F%2Fandreaspe-project-4-3264390b1a4b.herokuapp.com%2F/
+
+<img src="static/images/w3c_css.png" alt="W3C css validation" width="50%">
+
+**Validation Link:** https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fandreaspe-project-4-3264390b1a4b.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en/
+
+<br><br>
+
+- **Cross‑browser/device**: Tested on Chrome, Edge, Safari, mobile devices.
+
+- **Functional testing**:
+
+  - Register/Login/Logout works as expected.
+  - Booking CRUD tested.
+  - Validation prevents past dates, booking during no working hours, invalid number of guests.
+  - Bookings can be accessed, edited and deleted from the Django admin panel.
+
+---
+
+## Challenges & Solutions:
+
+- **Preventing Users from Booking in the Past.**
+- Challenge: Initially, the reservation form allowed users to select any date, including past dates. This would have made the booking system unrealistic and potentially confusing.
+- Solution: I implemented custom validation logic in the form to restrict the date field. The validation checks that the chosen date is today or in the future.
+- Result: Users can now only book valid dates within the allowed range, ensuring the system reflects real‑world restaurant operations.
+
+<br><br>
+
+- **Restricting Access to Other Users’ Bookings.**
+- Challenge: By default, Django models and views don’t automatically restrict which records a logged‑in user can see. Without extra logic, one user could potentially view or manipulate another user’s reservations by guessing URLs or IDs.
+- Solution: I filtered all booking queries by the currently logged‑in user (request.user). In the views, only reservations belonging to that user are retrieved. Update and delete actions are also restricted so that a user can only edit or cancel their own bookings.
+- Result: Each user now has a private booking history. This prevents unauthorized access and ensures data privacy, which is critical for a production‑ready system.
+
+<br><br>
+
+- **Implementing Clear Confirmation Messages.**
+- Challenge: During early testing, users had no feedback after actions like logging in, logging out, or creating a booking. This made the experience confusing, as it wasn’t clear whether the action had succeeded.
+- Solution: I used Django’s built‑in messages framework to display contextual alerts. Success messages appear in the navbar after login, logout, booking creation, update, or cancellation. Error messages are shown inline on forms when validation fails.
+- Result: Users now receive immediate, clear feedback for every action. This improves usability and builds trust in the system.
+
+---
+
+## Bugs:
+
+- **Resolved:** dj-database-url not recognised in the virtual environment, booking on a past date possible.
+
+<br><br>
+
+- **dj-database-url not recognised in the virtual environment.**
+- Symptom: Even though dj-database-url was installed and listed in requirements.txt, Django raised an ImportError when trying to run migrations or start the server.
+- Cause: The package was installed globally but not properly registered in the active virtual environment.
+- Fix: Reinstalled the package inside the virtual environment with:
+  <br>
+  **pip install dj-database-url**
+  <br>
+  **pip freeze > requirements.txt**
+  <br>
+  Then redeployed to Heroku to ensure the dependency was available in production.
+- Result: Django successfully connected to the PostgreSQL database using the parsed DATABASE_URL.
+
+<br><br>
+
+- **Booking on a past date possible**
+- Symptom: During testing, the reservation form allowed users to select dates that were already in the past. This meant a user could, for example, book a table for “yesterday,” which is not realistic for a restaurant booking system.
+- Cause: The initial form and model validation only checked that the date field was a valid date, but did not restrict it relative to the current date.
+- Fix: I added custom validation logic in the form’s clean_date method to ensure that:
+  <br>
+  The booking date must be today or later.
+  <br>
+  <img src="static/images/snippet.png" alt="Code snippet" width="50%">
+  <br>
+  Result: Users can no longer make bookings in the past. The form now enforces realistic booking behaviour, improving both data integrity and user experience.
+
+- **Remaining**: Minor button alignment issue (cosmetic, does not affect functionality),
