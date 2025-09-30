@@ -226,7 +226,11 @@ Iterative testing and feedback loops guided refinements until the Minimum Viable
 
 - **Lighthouse**: Passed performance, accessibility, best practices, SEO.
 
-<img src="static/images/lighthouse.png" alt="Lighthouse result image" width="50%">
+<img src="static/images/lighthouse.png" alt="Lighthouse result image" width="50%"> 
+
+<img src="static/images/lighthouse_menu.png" alt="Lighthouse result image" width="50%">
+
+<img src="static/images/lighthouse_bookings.png" alt="Lighthouse result image" width="50%">
 
 <br><br>
 
