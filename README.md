@@ -155,6 +155,8 @@ Iterative testing and feedback loops guided refinements until the Minimum Viable
 
 <img src="static/images/session_expiration.png" alt="Session expiration settings" width="50%">
 
+<br><br>
+
 - Success/error messages.
 
 <img src="static/images/messages.png" alt="User action confirmation message" width="50%">
@@ -163,6 +165,58 @@ Iterative testing and feedback loops guided refinements until the Minimum Viable
 
 <img src="static/images/messages_3.png" alt="User action confirmation message" width="50%">
 
+<br><br>
+
 - Django Admin panel for superusers.
 
 <img src="static/images/admin_panel.png" alt="Django admin panel" width="50%">
+
+### Future Features
+
+- Custom admin dashboard outside Django admin.
+- Email confirmations/reminders.
+- Password reset functionality.
+- Customer reviews/testimonials.
+- Prevent double booking.
+- Able to signup with email.
+
+---
+
+## Technologies Used
+
+**Languages**: HTML5, CSS3, Python
+
+- HTML5 – Provided the semantic structure of the website, ensuring accessibility and compatibility across browsers.
+- CSS3 – Used for styling, layout, and responsive design, with Bootstrap classes supplemented by custom CSS tweaks.
+- Python 3 – The core programming language used with Django to handle backend logic, form validation, and database interactions.
+
+<br><br>
+
+**Frameworks/Libraries**: Django 4.x, Bootstrap 5, Django Allauth, WhiteNoise, Gunicorn, Psycopg2
+
+- Django 4.x – The main web framework, providing the MVC structure, ORM for database queries, authentication system, and built‑in admin panel.
+- Bootstrap 5 – Frontend framework used for responsive grid layout, navigation bar, buttons, and form styling.
+- Django Allauth – Simplified user authentication and registration, handling login, logout, and account management securely.
+- WhiteNoise – Enabled efficient serving of static files (CSS, JS, images) directly from Django in production, with cache‑control headers.
+- Gunicorn – A WSGI HTTP server used to run the Django application on Heroku.
+- Psycopg2 – PostgreSQL database adapter for Python, allowing Django to communicate with the production database.
+
+<br><br>
+
+**Database**: PostgreSQL (Heroku)
+
+- PostgreSQL (Heroku) – Relational database used in production. Hosted via Heroku’s Postgres add‑on, replacing the default SQLite used in local development.
+
+<br><br>
+
+**Tools**: GitHub, VS Code, Heroku, W3C Validators, Lighthouse, Chrome DevTools, Pexels/Pixabay (images)
+
+- GitHub – Version control and repository hosting, also used for issue tracking and Agile methodology (user stories, Kanban board).
+- VS Code – Local development environment, with integrated terminal and extensions for Python/Django.
+- Heroku – Cloud platform used for deployment, environment variable management, and database hosting.
+- W3C HTML & CSS Validators – Ensured semantic, standards‑compliant markup and styling.
+- Lighthouse (Chrome DevTools) – Audited performance, accessibility, SEO, and best practices, guiding improvements.
+- Chrome DevTools – Used extensively for debugging layout issues, testing responsiveness, and inspecting network requests.
+- Pexels / Pixabay – Sources of royalty‑free images used in the project (hero images, menu illustrations).
+
+---
