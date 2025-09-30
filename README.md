@@ -305,6 +305,66 @@ Iterative testing and feedback loops guided refinements until the Minimum Viable
   <br>
   <img src="static/images/snippet.png" alt="Code snippet" width="50%">
   <br>
-  Result: Users can no longer make bookings in the past. The form now enforces realistic booking behaviour, improving both data integrity and user experience.
+  Result: Users can no longer make bookings at a past date. The form now enforces realistic booking behaviour, improving both data integrity and user experience.
 
-- **Remaining**: Minor button alignment issue (cosmetic, does not affect functionality),
+- **Remaining:** 
+
+- Minor button alignment issue in the my bookings page (cosmetic, does not affect functionality).
+- Bookings are possible at a past hour.
+
+---
+
+## Deployment
+Deployed to Heroku with PostgreSQL.  
+
+**Steps**:  
+
+**Create the Heroku App**  
+- Log in to [Heroku](https://dashboard.heroku.com/)  
+- Click **“New” → “Create new app”**  
+- Choose a unique name and select your region (e.g., Europe)
+
+**Connect to GitHub**  
+- Go to the **“Deploy”** tab  
+- Under **Deployment method**, select **GitHub**  
+- Search for your repository and click **“Connect”**
+
+**Add the PostgreSQL Add‑on**  
+- Go to the **“Resources”** tab  
+- In the **Add-ons** section, search for **Heroku Postgres**  
+- Click to provision it  
+- This automatically sets the `DATABASE_URL` config var
+
+**Set Config Vars**  
+- Go to the **“Settings”** tab  
+- Click **“Reveal Config Vars”**  
+- Add the following variables:  
+- `SECRET_KEY` → your Django secret key  
+- `DEBUG` → `False`  
+- *(Optional)* `DEVELOPMENT` → `True` (used locally to toggle debug mode)
+
+**Prepare for Deployment**  
+- In your local project, ensure the following packages are listed in `requirements.txt`:  
+- `gunicorn`  
+- `dj-database-url`  
+- `whitenoise`  
+- Create a `Procfile` at the root level (same directory as `manage.py`) with the following content:  
+
+`web: gunicorn your_project_name.wsgi`
+
+**Push to GitHub**  
+- Commit all changes  
+- Push to your GitHub repository
+
+**Deploy the App**  
+- In the **“Deploy”** tab on Heroku  
+- Scroll to **“Manual Deploy”**  
+- Select the branch (usually `main`)  
+- Click **“Deploy Branch”**  
+- Wait for the build to complete  
+- You should see **“Your app was successfully deployed”**
+- *(Optional)* Choose Dyno Type via the **“Resources”** tab for better performance.
+
+**Open the App**  
+- Click **“Open App”** to view your live site  
+- You should see Django’s success page or your custom homepage
