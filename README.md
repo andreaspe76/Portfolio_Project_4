@@ -178,6 +178,7 @@ Iterative testing and feedback loops guided refinements until the Minimum Viable
 - Password reset functionality.
 - Customer reviews/testimonials.
 - Prevent double booking.
+- Prevent bookings in an hour in the past.
 - Able to signup with email.
 
 ---
