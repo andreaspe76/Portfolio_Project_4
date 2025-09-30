@@ -368,3 +368,33 @@ Deployed to Heroku with PostgreSQL.
 **Open the App**  
 - Click **“Open App”** to view your live site  
 - You should see Django’s success page or your custom homepage
+
+---
+
+### Forking the GitHub Repository
+- Go to the repo.  
+- Click *Fork*.  
+
+### Creating a Local Clone
+- Go to the repo.  
+- Click *Code* → copy HTTPS link.  
+- Run `git clone <url>`.  
+
+---
+
+## Credits
+- Code Institute tutorials.  
+- Django & Bootstrap documentation.  
+- StackOverflow for validation snippets.  
+- Pexels/Pixabay for images.  
+- Font Awesome for icons.
+- Django 5 By Example book by Antonio Melé for booking form validation logic.
+- Django project by former Code Institute student (https://github.com/Pramilashanmugam/Restaurant) for inspiration and design ideas.
+
+---
+
+## Acknowledgements
+- Mentor for guidance.    
+- Family for encouragement.  
+
+---
